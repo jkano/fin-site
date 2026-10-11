@@ -1,7 +1,7 @@
 # fin-site
 
 Source of <https://fin.jdkno.com>, served by GitHub Pages from `main` (root). Pages are plain HTML:
-`index.html`, `privacy/`, `terms/`, `support/`, with images and fonts under `web/`.
+`index.html`, `privacy/`, `terms/`, `refunds/`, `plus/` (the plans and prices page), `support/`, with images and fonts under `web/`.
 
 `README.md` is not published: `_config.yml` excludes it from the Jekyll build that GitHub Pages runs. If a
 `.nojekyll` file is ever added (turning Jekyll off), this file would be published at `/README.md`; exclude
