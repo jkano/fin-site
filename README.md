@@ -14,7 +14,7 @@ it another way first.
 | | |
 |---|---|
 | `<lang>` | `en` or `es` |
-| `<name>` | `apple-pay`, `notification` or `message` |
+| `<name>` | `apple-pay`, `notification`, `message` or `wallet-card-name` (this one is vertical, 9:16) |
 | `<size>` | `720p` for the app, `1080p` for the web |
 
 Example URL: `https://fin.jdkno.com/tutorials/es/message-720p.mp4`
