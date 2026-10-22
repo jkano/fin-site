@@ -7,6 +7,12 @@ Source of <https://fin.jdkno.com>, served by GitHub Pages from `main` (root). Pa
 `.nojekyll` file is ever added (turning Jekyll off), this file would be published at `/README.md`; exclude
 it another way first.
 
+## Language of a page
+
+Every page opens in the language the visitor last chose (kept in the browser), else the browser's language. A link can force one with
+`?lang=es` or `?lang=en` (for example `https://fin.jdkno.com/terms/?lang=es`); the app uses this to show its own language. The visitor can
+still switch with the EN / ES buttons. The script is the one at the end of each page.
+
 ## Tutorial videos
 
 `tutorials/<lang>/<name>-<size>.mp4`, with a poster `tutorials/<lang>/<name>.jpg`.
