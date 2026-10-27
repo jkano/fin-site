@@ -1,0 +1,99 @@
+---
+permalink: /404.html
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fin</title>
+<meta name="description" content="Join a trip in Fin.">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#05070D">
+<meta property="og:title" content="Join a trip in Fin">
+<meta property="og:description" content="You've been invited to share a trip's expenses in Fin.">
+<meta property="og:image" content="https://fin.jdkno.com/apple-touch-icon.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+@font-face{font-family:Inter;font-weight:400;font-display:swap;src:url(/web/fonts/inter-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:600;font-display:swap;src:url(/web/fonts/inter-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:700;font-display:swap;src:url(/web/fonts/inter-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:800;font-display:swap;src:url(/web/fonts/inter-latin-800-normal.woff2) format("woff2")}
+html{background:#05070D}
+body{margin:0;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#05070D;color:#fff;font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+main{width:100%;max-width:420px;padding:32px 24px;box-sizing:border-box;text-align:center}
+.logo{width:72px;height:72px;border-radius:18px;margin:0 auto 24px;display:block}
+h1{font-size:28px;font-weight:800;letter-spacing:-.03em;line-height:1.15;margin:0 0 12px}
+p{font-size:16px;line-height:1.5;margin:0 0 24px;color:rgba(255,255,255,.72)}
+.actions{display:flex;flex-direction:column;align-items:center;gap:14px}
+.open{display:inline-block;background:#fff;color:#05070D;font-weight:700;font-size:16px;padding:14px 28px;border-radius:99px;text-decoration:none}
+.store{display:inline-flex;align-items:center;gap:12px;padding:12px 22px;border-radius:16px;font-weight:700;background:linear-gradient(180deg,rgba(255,255,255,.18),rgba(255,255,255,.06));border:1px solid rgba(255,255,255,.25);color:#fff;text-align:left}
+.store small{display:block;font-size:11px;font-weight:600;opacity:.8;line-height:1.1}
+.store b{font-size:22px;letter-spacing:-.02em;line-height:1.1;display:block}
+.soon{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:#F6B73C;background:rgba(246,183,60,.12);border:1px solid rgba(246,183,60,.4);padding:6px 14px;border-radius:99px}
+.soon i{width:8px;height:8px;border-radius:50%;background:#F6B73C}
+.row{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.hint{font-size:14px;margin:20px 0 0;color:rgba(255,255,255,.5)}
+footer{padding:24px;font-size:13px;color:rgba(255,255,255,.45)}
+footer a{color:rgba(255,255,255,.6);text-decoration:none;margin:0 8px}
+[hidden]{display:none!important}
+.es{display:none}
+html[lang=es] .en{display:none}
+html[lang=es] .es{display:inline}
+html[lang=es] .es.block{display:block}
+</style>
+</head>
+<body>
+<main>
+  <img class="logo" src="/apple-touch-icon.png" alt="Fin" width="72" height="72">
+
+  <!-- An invite link: fin.jdkno.com/trip/<token>. With Fin installed iOS opens the app without showing this page. -->
+  <section id="invite" hidden>
+    <h1><span class="en">You've been invited to a trip</span><span class="es">Te invitaron a un viaje</span></h1>
+    <p><span class="en">Share the trip's expenses with the people who invited you. Install Fin, then open the invite link again to join.</span><span class="es">Comparte los gastos del viaje con quienes te invitaron. Instala Fin y abre de nuevo el enlace de invitación para unirte.</span></p>
+    <div class="actions">
+      <a class="open" id="open" href="fin://trip/"><span class="en">Open in Fin</span><span class="es">Abrir en Fin</span></a>
+      <div class="row">
+        <span class="store"><span><small><span class="en">Download on the</span><span class="es">Descárgala en el</span></small><b>App Store</b></span></span>
+        <span class="soon"><i></i><span class="en">Coming soon</span><span class="es">Próximamente</span></span>
+      </div>
+    </div>
+    <p class="hint"><span class="en">Already have Fin? Tap “Open in Fin”.</span><span class="es">¿Ya tienes Fin? Toca «Abrir en Fin».</span></p>
+  </section>
+
+  <!-- Any other address that does not exist. -->
+  <section id="missing" hidden>
+    <h1><span class="en">Page not found</span><span class="es">Página no encontrada</span></h1>
+    <p><span class="en">That address doesn't exist.</span><span class="es">Esa dirección no existe.</span></p>
+    <div class="actions"><a class="open" href="/"><span class="en">Go to Fin</span><span class="es">Ir a Fin</span></a></div>
+  </section>
+</main>
+<footer>
+  <a href="/privacy/"><span class="en">Privacy</span><span class="es">Privacidad</span></a>
+  <a href="/terms/"><span class="en">Terms</span><span class="es">Términos</span></a>
+</footer>
+<script>
+(function () {
+  // The language: ?lang=es|en, else the one chosen on the site, else the browser's.
+  var K = "fin-lang", stored = null;
+  try { stored = localStorage.getItem(K); } catch (_) {}
+  var asked = (new URLSearchParams(location.search).get("lang") || "").toLowerCase();
+  var lang = (asked === "es" || asked === "en") ? asked : (stored || ((navigator.language || "").toLowerCase().indexOf("es") === 0 ? "es" : "en"));
+  document.documentElement.lang = lang;
+
+  // GitHub Pages answers every unknown address with this page: the ones that look like an invite show the invitation.
+  var match = /^\/trip\/([A-Za-z0-9]{10})\/?$/.exec(location.pathname);
+  if (match) {
+    document.getElementById("open").href = "fin://trip/" + match[1];
+    document.getElementById("invite").hidden = false;
+    document.title = lang === "es" ? "Te invitaron a un viaje · Fin" : "You've been invited to a trip · Fin";
+  } else {
+    document.getElementById("missing").hidden = false;
+  }
+})();
+</script>
+</body>
+</html>

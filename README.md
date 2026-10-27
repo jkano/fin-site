@@ -7,6 +7,24 @@ Source of <https://fin.jdkno.com>, served by GitHub Pages from `main` (root). Pa
 `.nojekyll` file is ever added (turning Jekyll off), this file would be published at `/README.md`; exclude
 it another way first.
 
+## Invite links of shared trips
+
+`https://fin.jdkno.com/trip/<token>` (the token is 10 letters and digits) opens a shared trip in the Fin app:
+
+- **With Fin installed**, iOS opens the app straight from the link, without loading a page. That needs `.well-known/apple-app-site-association`
+  (it names the app, `DNFZ3V3KN7.com.jdkno.fin`, and the path `/trip/*`) and the app's `applinks:fin.jdkno.com` entitlement. `_config.yml`
+  has `include: .well-known` because Jekyll leaves out folders that start with a dot; without it the file is not published and the links
+  only open Safari. GitHub Pages serves the extensionless file as `application/octet-stream`, which iOS accepts. Check it with
+  `curl -i https://fin.jdkno.com/.well-known/apple-app-site-association` (status 200, no redirect).
+- **Without Fin** (or on a computer), GitHub Pages answers the unknown path with `404.html`, which looks at the address: a link shaped like
+  an invite shows the invitation (an "Open in Fin" button that uses the `fin://trip/<token>` address, the App Store button with "Coming
+  soon", and the privacy and terms links); any other address shows "Page not found". The page is `noindex` and sends no referrer, so tokens
+  stay out of search engines and other sites. Its status is 404, which only matters to search engines.
+- When the app is on the App Store, replace the grey store button in `404.html` with a link to its page, and remove the "Coming soon" pill.
+- iOS fetches the association file through Apple's CDN when the app is installed and again now and then, so a change to it can take a day
+  to reach phones. For a build run from Xcode, add `?mode=developer` to the entitlement and turn on Settings > Developer > Associated Domains
+  Development on the device.
+
 ## Language of a page
 
 Every page opens in the language the visitor last chose (kept in the browser), else the browser's language. A link can force one with

@@ -1,4 +1,7 @@
 # GitHub Pages builds this site with Jekyll. Everything here is plain HTML and static files, so the
-# only setting needed is what to leave out of the published site.
+# settings needed are what to leave out of the published site, and what to put in that Jekyll hides:
+# `.well-known/` holds the file iOS reads to open invite links in the app.
+include:
+  - .well-known
 exclude:
   - README.md

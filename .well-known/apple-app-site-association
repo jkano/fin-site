@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["DNFZ3V3KN7.com.jdkno.fin"],
+        "components": [
+          { "/": "/trip/*", "comment": "Invite links of shared trips" }
+        ]
+      }
+    ]
+  }
+}
